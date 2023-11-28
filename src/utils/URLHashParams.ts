@@ -2,12 +2,9 @@
  * URL hash param keys
  *
  * center: longitude, latitude
- * zoom: number
- * country: string
  **********************/
 enum Keys {
-  Center = 'mapCenter',
-  Country = 'country'
+  Center = 'mapCenter'
 }
 
 interface Center {
@@ -57,16 +54,4 @@ export const getMapCenterFromHashParams = () => {
     },
     zoom
   };
-};
-
-export const setCountryToHashParameters = (value: string) => {
-  updateHashParams(Keys.Country, value);
-};
-
-export const getCountryFromHashParameters = () => {
-  const value = getHashParamValueByKey(Keys.Country);
-  if (!value) {
-    return null;
-  }
-  return value;
 };

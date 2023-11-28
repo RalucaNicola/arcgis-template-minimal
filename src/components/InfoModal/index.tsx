@@ -9,6 +9,7 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../../store/storeConfiguration';
 import { setInfoModalOptions } from '../../store/modalSlice';
 import { getLocalStorageItem, setLocalStorageItem } from '../../utils/LocalStorage';
+import { ChangeEvent, EventHandler } from 'react';
 
 const InfoModal = () => {
   const isOpen = useSelector((state: RootState) => state.infoModal.visible);
@@ -52,7 +53,7 @@ const InfoModal = () => {
             <CalciteLabel layout='inline'>
               Show this information when application starts
               <CalciteCheckbox
-                onCalciteCheckboxChange={(evt) => {
+                onCalciteCheckboxChange={(evt: ChangeEvent<HTMLInputElement>) => {
                   setLocalStorageItem('modalVisibleOnStart', evt.target.checked ? 'true' : 'false');
                 }}
                 checked={isOpenOnStart}

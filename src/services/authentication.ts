@@ -28,7 +28,7 @@ export const setupIdentityManager = () => async (dispatch: AppDispatch) => {
       })
     );
   } catch (error) {
-    console.log(error);
+    // console.log(error);
   }
 };
 
